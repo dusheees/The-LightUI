@@ -8,9 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var isLiggtOn: Bool = true
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack {
+            isLiggtOn ? Color.white : Color.black
+        }
+        .edgesIgnoringSafeArea(.all)
+        .onTapGesture {
+            isLiggtOn.toggle()
+        }
     }
 }
 
@@ -19,3 +27,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
